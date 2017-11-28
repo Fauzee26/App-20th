@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Ab-Xc-O30">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Baskerville.ttc">
+            <string>Baskerville-Bold</string>
+        </array>
+        <array key="ChalkboardSE.ttc">
+            <string>ChalkboardSE-Regular</string>
+        </array>
+        <array key="Helvetica.ttc">
+            <string>Helvetica-Bold</string>
+        </array>
+        <array key="LaoSangamMN.ttf">
+            <string>LaoSangamMN</string>
+        </array>
+        <array key="Optima.ttc">
+            <string>Optima-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Japan Recipt-->
+        <scene sceneID="Tam-ND-LVT">
+            <objects>
+                <tableViewController id="C3a-FD-lgz" customClass="JapanTableViewController" customModule="JapanRecipt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vaA-UU-Xxt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellJapan" rowHeight="63" id="5ZH-Rk-zBm" customClass="JapanTableViewCell" customModule="JapanRecipt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5ZH-Rk-zBm" id="eIh-qq-Nbf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nma_nya" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOu-Ga-S0e">
+                                            <rect key="frame" x="8" y="8" width="359" height="26"/>
+                                            <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oOu-Ga-S0e" firstAttribute="top" secondItem="eIh-qq-Nbf" secondAttribute="topMargin" id="BqQ-q7-PLW"/>
+                                        <constraint firstItem="oOu-Ga-S0e" firstAttribute="trailing" secondItem="eIh-qq-Nbf" secondAttribute="trailingMargin" id="jKe-2h-7RD"/>
+                                        <constraint firstItem="oOu-Ga-S0e" firstAttribute="leading" secondItem="eIh-qq-Nbf" secondAttribute="leadingMargin" id="sJe-DU-grH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblNama" destination="oOu-Ga-S0e" id="yYg-03-JvZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="C3a-FD-lgz" id="JPv-zU-ocr"/>
+                            <outlet property="delegate" destination="C3a-FD-lgz" id="Jwy-2G-rxI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Japan Recipt" id="yX5-DF-Aqo"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="passData" id="wPm-Fy-kUU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAa-tO-N3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106.40000000000001" y="-32.833583208395808"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JapanRecipt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nama_resep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogp-4e-Oh9">
+                                <rect key="frame" x="16" y="74" width="343" height="28.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="info" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYy-Jr-RPx">
+                                <rect key="frame" x="16" y="145" width="343" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="porsi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX4-pK-xpD">
+                                <rect key="frame" x="201" y="112" width="158" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bahan" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFC-60-ca4">
+                                <rect key="frame" x="16" y="276" width="343" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cara_masak" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30c-nL-Ym1">
+                                <rect key="frame" x="16" y="429" width="343" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAa-OQ-NF6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Detail Resep" id="NKz-nk-VgO">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="m8A-Av-aqu"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="IX4-pK-xpD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="201" id="0In-13-xrq"/>
+                            <constraint firstItem="IX4-pK-xpD" firstAttribute="top" secondItem="Ogp-4e-Oh9" secondAttribute="bottom" constant="9.5" id="CCr-MX-ILm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ogp-4e-Oh9" secondAttribute="trailing" constant="16" id="DZp-yR-oF2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IX4-pK-xpD" secondAttribute="trailing" constant="16" id="Efz-LA-are"/>
+                            <constraint firstItem="Ogp-4e-Oh9" firstAttribute="top" secondItem="DAa-OQ-NF6" secondAttribute="bottom" constant="10" id="Gzq-EU-oUl"/>
+                            <constraint firstItem="Ogp-4e-Oh9" firstAttribute="top" secondItem="DAa-OQ-NF6" secondAttribute="bottom" constant="10" id="Vp7-ta-VHm"/>
+                            <constraint firstItem="DAa-OQ-NF6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a0o-to-8lR"/>
+                            <constraint firstItem="DAa-OQ-NF6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fGE-c6-Vkv"/>
+                            <constraint firstItem="DAa-OQ-NF6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mGA-oF-4tf"/>
+                            <constraint firstItem="Ogp-4e-Oh9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="opB-aL-Guy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelCara" destination="30c-nL-Ym1" id="o8r-BV-EzC"/>
+                        <outlet property="labelInfo" destination="wYy-Jr-RPx" id="LwR-Eh-hMY"/>
+                        <outlet property="labelNama" destination="Ogp-4e-Oh9" id="OR3-ae-GHf"/>
+                        <outlet property="labelPorsi" destination="IX4-pK-xpD" id="6pV-Ym-Lyf"/>
+                        <outlet property="labelbahan" destination="nFC-60-ca4" id="jPk-nO-lWT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784.79999999999995" y="-33.733133433283363"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="v6Y-3e-ab9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Ab-Xc-O30" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vAo-iG-B7P">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="C3a-FD-lgz" kind="relationship" relationship="rootViewController" id="Edi-XJ-iir"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QyN-JB-W4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-586" y="-34"/>
+        </scene>
+    </scenes>
+</document>
