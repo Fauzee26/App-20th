@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class JapanTableViewController: UITableViewController {
     
@@ -60,23 +62,60 @@ class JapanTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return arrayJepang.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellJapan", for: indexPath) as! JapanTableViewCell
 
-        // Configure the cell...
+        var serverid = arrayJepang[indexPath.row]
+        
+        var namaResep = serverid["nama_resep"]
+        cell.lblNama.text = namaResep
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("Row \(indexPath.row)selected")
+        
+        let task = arrayJepang[indexPath.row]
+        namaSelected = task["nama_resep"] as! String
+        bahanSelected = task["bahan"] as! String
+        caraSelected = task["cara"] as! String
+        infoSelected = task["info"] as! String
+        porsiSelected = task["jumlahOrang"] as! String
+
+        
+        
+        performSegue(withIdentifier: "passData", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "passData" {
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let controller = segue.destination as! ViewController
+                let value = arrayJepang[indexPath.row]
+                
+                controller.passNama = value["nama_resep"] as! String
+                controller.passCara = value["cara"] as! String
+                controller.passPorsi = value["jumlahOrang"] as! String
+                controller.passInfo = value["info"] as! String
+                controller.passBahan = value["bahan"] as! String
+
+                
+                
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
